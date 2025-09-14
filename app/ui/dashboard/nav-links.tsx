@@ -8,6 +8,10 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
+// register auro components only in browser
+// dynamic(() => import("@aurodesignsystem/auro-header"), { ssr: false });
+import "@aurodesignsystem/auro-header";
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
@@ -40,6 +44,8 @@ export default function NavLinks() {
           >
             <LinkIcon className="w-6" />
             <p className="hidden md:block">{link.name}</p>
+
+            <auro-header>Yogurt</auro-header>
           </Link>
         );
       })}
