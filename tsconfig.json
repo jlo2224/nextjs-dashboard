@@ -25,6 +25,7 @@
   },
   "include": [
     "app",
+    "types",
     "next-env.d.ts",
     "app/global.d.ts",
     "**/*.ts",
