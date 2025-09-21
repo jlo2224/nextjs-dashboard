@@ -1,3 +1,5 @@
+export {}
+
 declare module "@aurodesignsystem/auro-header";
 
 declare namespace JSX {
