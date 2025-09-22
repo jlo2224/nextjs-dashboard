@@ -8,10 +8,8 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
-import dynamic from 'next/dynamic';
-// register auro components only in browser
+import { useEffect } from "react";
 // dynamic(() => import("@aurodesignsystem/auro-header"), { ssr: false });
-import "@aurodesignsystem/auro-header";
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
@@ -27,6 +25,12 @@ const links = [
 
 export default function NavLinks() {
   const pathname = usePathname();
+  useEffect(() => {
+    (async () => {
+      await import("@aurodesignsystem/auro-header");
+    })();
+  }, []);
+
   return (
     <>
       {links.map((link) => {
